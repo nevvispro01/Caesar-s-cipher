@@ -58,13 +58,13 @@ if __name__ == '__main__':
                     elif A.find(text[i]) == 2:
                         new_text = new_text + 'z'
                 elif B.find(text[i]) != -1:
-                    if A.find(text[i]) >= 3:
+                    if B.find(text[i]) >= 3:
                         new_text = new_text + B[B.find(text[i]) - 3]
-                    elif A.find(text[i]) == 0:
+                    elif B.find(text[i]) == 0:
                         new_text = new_text + 'э'
-                    elif A.find(text[i]) == 1:
+                    elif B.find(text[i]) == 1:
                         new_text = new_text + 'ю'
-                    elif A.find(text[i]) == 2:
+                    elif B.find(text[i]) == 2:
                         new_text = new_text + 'я'
                 else:
                     new_text = new_text + text[i]
