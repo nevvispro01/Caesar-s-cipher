@@ -10,35 +10,35 @@ if __name__ == '__main__':
         print("2) Расшифровать текст")
         print("3) Выход")
         value = int(input())
-        if value == 1:
+        if value == 1: # Зашифровать тест
             new_text = ''
             text = str(input("Введите текст который надо зашифровать: "))
-            text = text.lower()
+            text = text.lower() # преобразование всех букв в строчные
             for i in range(len(text)):
-                number = A.find(text[i])
-                if A.find(text[i]) != -1:
-                    if A.find(text[i]) <= 22:
-                        number = A[A.find(text[i]) + 3]
-                        new_text = new_text + A[A.find(text[i]) + 3]
-                    elif A.find(text[i]) == 23:
-                        new_text = new_text + 'a'
-                    elif A.find(text[i]) == 24:
-                        new_text = new_text + 'b'
-                    elif A.find(text[i]) == 25:
-                        new_text = new_text + 'c'
-                elif B.find(text[i]) != -1:
-                    number = B.find(text[i])
-                    if A.find(text[i]) <= 29:
-                        number = B[B.find(text[i]) + 3]
-                        new_text = new_text + B[B.find(text[i]) + 3]
-                    elif A.find(text[i]) == 30:
-                        new_text = new_text + 'а'
-                    elif A.find(text[i]) == 31:
-                        new_text = new_text + 'б'
-                    elif A.find(text[i]) == 32:
-                        new_text = new_text + 'в'
+                if A.find(text[i]) != -1: # проверка на английские буквы
+                    number = A.find(text[i]) # нахождение цифры, под которой находится данная введенная буква в алфавите в начале программы
+                    if number <= 22:
+                        number = A[A.find(text[i]) + 3] # нахождение цифры, под которой находится преобразованная буква в алфавите в начале программы
+                        new_text = new_text + A[number] # Добавление измененной буквы к строке с зашифрованном тексте
+                    elif number == 23:
+                        new_text = new_text + 'a' # Добавление буквы 'a' к строке с зашифрованном тексте
+                    elif number == 24:
+                        new_text = new_text + 'b' # Добавление буквы 'b' к строке с зашифрованном тексте
+                    elif number == 25:
+                        new_text = new_text + 'c' # Добавление буквы 'c' к строке с зашифрованном тексте
+                elif B.find(text[i]) != -1: # проверка на русские буквы
+                    number = B.find(text[i]) # нахождение цифры, под которой находится данная введенная буква в алфавите в начале программы
+                    if number <= 29:
+                        number = B[B.find(text[i]) + 3] # нахождение цифры, под которой находится преобразованная буква в алфавите в начале программы
+                        new_text = new_text + B[number] # Добавление измененной буквы к строке с зашифрованном тексте
+                    elif number == 30:
+                        new_text = new_text + 'а' # Добавление буквы 'a' к строке с зашифрованном тексте
+                    elif number == 31:
+                        new_text = new_text + 'б' # Добавление буквы 'б' к строке с зашифрованном тексте
+                    elif number == 32:
+                        new_text = new_text + 'в' # Добавление буквы 'в' к строке с зашифрованном тексте
                 else:
-                    new_text = new_text + text[i]
+                    new_text = new_text + text[i] # если введен символ, то с ним преобразование не проводятся
             print()
             print("Исходный текст: ", text)
             print("Зашифрованный текст: ", new_text)
@@ -46,28 +46,30 @@ if __name__ == '__main__':
         elif value == 2:
             new_text = ''
             text = str(input("Введите текст который надо расшифровать: "))
-            text = text.lower()
+            text = text.lower() # преобразование всех букв в строчные
             for i in range(len(text)):
-                if A.find(text[i]) != -1:
-                    if A.find(text[i]) >= 3:
-                        new_text = new_text + A[A.find(text[i]) - 3]
-                    elif A.find(text[i]) == 0:
-                        new_text = new_text + 'x'
-                    elif A.find(text[i]) == 1:
-                        new_text = new_text + 'y'
-                    elif A.find(text[i]) == 2:
-                        new_text = new_text + 'z'
+                if A.find(text[i]) != -1: # проверка на английские буквы
+                    number = A.find(text[i])  # нахождение цифры, под которой находится данная введенная буква в алфавите в начале программы
+                    if number >= 3:
+                        new_text = new_text + A[A.find(text[i]) - 3] # Добавление измененной буквы к строке с зашифрованном тексте
+                    elif number == 0:
+                        new_text = new_text + 'x' # Добавление буквы 'x' к строке с зашифрованном тексте
+                    elif number == 1:
+                        new_text = new_text + 'y' # Добавление буквы 'y' к строке с зашифрованном тексте
+                    elif number == 2:
+                        new_text = new_text + 'z' # Добавление буквы 'z' к строке с зашифрованном тексте
                 elif B.find(text[i]) != -1:
-                    if B.find(text[i]) >= 3:
-                        new_text = new_text + B[B.find(text[i]) - 3]
-                    elif B.find(text[i]) == 0:
-                        new_text = new_text + 'э'
-                    elif B.find(text[i]) == 1:
-                        new_text = new_text + 'ю'
-                    elif B.find(text[i]) == 2:
-                        new_text = new_text + 'я'
+                    number = B.find(text[i])  # нахождение цифры, под которой находится данная введенная буква в алфавите в начале программы
+                    if number >= 3:
+                        new_text = new_text + B[B.find(text[i]) - 3] # Добавление измененной буквы к строке с зашифрованном тексте
+                    elif number == 0:
+                        new_text = new_text + 'э' # Добавление буквы 'э' к строке с зашифрованном тексте
+                    elif number == 1:
+                        new_text = new_text + 'ю' # Добавление буквы 'ю' к строке с зашифрованном тексте
+                    elif number == 2:
+                        new_text = new_text + 'я' # Добавление буквы 'я' к строке с зашифрованном тексте
                 else:
-                    new_text = new_text + text[i]
+                    new_text = new_text + text[i] # если введен символ, то с ним преобразование не проводятся
             print()
             print("Исходный текст: ", text)
             print("Расшифрованный текст: ", new_text)
@@ -75,3 +77,5 @@ if __name__ == '__main__':
         elif value == 3:
             exit = True
             print("Выход...")
+        else:
+            print("Неверный формат ввода, попробуйте еще раз.")
